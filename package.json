@@ -7,8 +7,8 @@
 	},
 	"scripts": {
 		"build": "tsc",
-		"clean": "yarn install --frozen-lockfile && rimraf dist",
-		"build:production": "npm run prestart && npm prune --production",
+		"clean": "rm -rf dist",
+		"build:production": "yarn clean && yarn build && func extensions install",
 		"watch": "tsc --w",
 		"prestart": "npm run build && func extensions install",
 		"start:host": "func start",
