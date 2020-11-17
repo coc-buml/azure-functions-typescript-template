@@ -11,7 +11,6 @@
 		"clean": "rm -rf dist",
 		"build:production": "yarn clean && yarn build && func extensions install",
 		"watch": "tsc --w",
-		"prestart": "npm run build && func extensions install",
 		"start:host": "func start",
 		"start": "npm-run-all --parallel start:host watch",
 		"lint": "yarn eslint . --ext .ts",
