@@ -14,6 +14,7 @@
 		"start:host": "func start",
 		"start": "npm-run-all --parallel start:host watch",
 		"lint": "yarn eslint . --ext .ts",
+		"lint:fix": "yarn eslint . --ext .ts --fix",
 		"test": "jest --testRegex \"\\.test\\.ts$\" --watch ",
 		"test:ci": "jest --testRegex \"\\.test\\.ts$\" --ci ",
 		"test:report": "jest --coverage --testRegex \"\\.test\\.ts$\""
