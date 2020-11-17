@@ -1,6 +1,7 @@
 {
-	"name": "",
-	"version": "",
+	"name": "azure-fucntions-typescript-template",
+	"version": "0.0.1",
+	"license": "MIT",
 	"engines": {
 		"node": ">=12",
 		"yarn": ">=1"
