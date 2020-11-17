@@ -1,19 +1,39 @@
 {
-  "name": "",
-  "version": "",
-  "scripts" : {
-    "build": "tsc",
-    "build:production": "npm run prestart && npm prune --production",
-    "watch": "tsc --w",
-    "prestart": "npm run build && func extensions install",
-    "start:host": "func start",
-    "start": "npm-run-all --parallel start:host watch",
-    "test": "echo \"No tests yet...\""
-  },
-  "description": "",
-  "devDependencies": {
-    "@azure/functions": "^1.0.1-beta1",
-    "npm-run-all": "^4.1.5",
-    "typescript": "^3.3.3"
-  }
+	"name": "",
+	"version": "",
+	"engines": {
+		"node": ">=12",
+		"yarn": ">=1"
+	},
+	"scripts": {
+		"build": "tsc",
+		"clean": "yarn install --frozen-lockfile && rimraf dist",
+		"build:production": "npm run prestart && npm prune --production",
+		"watch": "tsc --w",
+		"prestart": "npm run build && func extensions install",
+		"start:host": "func start",
+		"start": "npm-run-all --parallel start:host watch",
+		"lint": "yarn eslint . --ext .ts",
+		"test": "jest --testRegex \"\\.test\\.ts$\"",
+		"test:report": "cross-env JEST_JUNIT_OUTPUT=test-results/test-results-local.xml jest --ci --runInBand --reporters=default --reporters=jest-junit --testRegex \"\\.test\\.ts$\""
+	},
+	"description": "",
+	"devDependencies": {
+		"@azure/functions": "1.2.2",
+		"@types/jest": "26.0.9",
+		"@types/node": "14.0.*",
+		"@types/node-fetch": "2.5.7",
+		"@typescript-eslint/eslint-plugin": "3.8.0",
+		"@typescript-eslint/parser": "3.8.0",
+		"eslint": "7.6.0",
+		"eslint-config-prettier": "6.11.0",
+		"eslint-plugin-prettier": "3.1.4",
+		"eslint-plugin-react": "7.20.5",
+		"jest": "26.2.2",
+		"jest-junit": "11.1.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.1.2",
+		"ts-jest": "26.1.4",
+		"typescript": "3.9.7"
+	}
 }
