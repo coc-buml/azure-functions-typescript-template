@@ -6,6 +6,7 @@
 
 ```bash
 git clone https://github.com/coc-buml/azure-functions-typescript-template.git <new-service-name>
+cd <new-service-name> && rm -rf .git
 ```
 
 **use http trigger**
